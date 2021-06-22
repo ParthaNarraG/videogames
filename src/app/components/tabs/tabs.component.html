@@ -1,0 +1,11 @@
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab label="About">
+        <app-tabs-game-info [details]=details></app-tabs-game-info>
+    </mat-tab>
+    <mat-tab label="Screenshots" *ngIf="details.screenshots.results.length">
+        <app-tabs-screenshots [details]=details></app-tabs-screenshots>
+    </mat-tab>
+    <mat-tab label="Trailers" *ngIf="details.trailers.results.length">
+        <app-tabs-trailers [details]=details></app-tabs-trailers>
+    </mat-tab>
+</mat-tab-group>

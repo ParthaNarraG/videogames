@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="centeredItem">
+        <form #ngForm="ngForm" (ngSubmit)="onSubmit(ngForm)" class="w-25">
+            <div class="d-flex">
+                <input type="text" class="form-control searchBar" 
+                name="searchParam" ngModel
+                placeholder="Search 500,000+ games"
+                autocomplete="off">
+                <button class="btn btn-primary searchButton" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>

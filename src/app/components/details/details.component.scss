@@ -1,0 +1,32 @@
+::ng-deep mwl-gauge {
+  width: 150px;
+  height: 150px;
+  display: block;
+  padding: 10px;
+  .dial {
+    stroke-width: 10;
+  }
+  .value {
+    stroke-dasharray: none;
+    stroke-width: 13;
+  }
+  .value-text {
+    fill: #fff;
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+.game-gauge {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%,-50%);
+  &-label {
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    bottom: 50px;
+    left: 30px;
+  }
+}

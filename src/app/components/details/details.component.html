@@ -1,0 +1,39 @@
+
+<div class="details-wrapper" *ngIf="showContent">
+    <div class="img-wrapper">
+        <img src={{responseInfo.gameInfo.background_image}}>
+        <div class="centeredItem" *ngIf="!responseInfo.gameInfo.background_image">
+            <p>No Image Availabe</p>
+        </div>
+        <div class="gameIntro">
+            <div class="game-gauge">
+                <mwl-gauge
+                  class="two"
+                  [max]="100"
+                  [dialStartAngle]="180"
+                  [dialEndAngle]="0"
+                  [value]="gameRating"
+                  [animated]="true"
+                  [color]="getColor"
+                  [animationDuration]="2"
+                >
+                </mwl-gauge>
+                <a
+                  class="game-gauge-label"
+                  target="_blank"
+                  href="{{ responseInfo.gameInfo.metacritic_url }}"
+                  >Metacritic</a
+                >
+              </div>
+            <h1>{{responseInfo.gameInfo.name}}</h1>
+            <h5>Released : {{responseInfo.gameInfo.released | date}}</h5>
+            <div class="d-flex justify-content-center w-100">
+                <span *ngFor="let genre of responseInfo.gameInfo.genres;let i=index;">
+                    {{genre.name}}  {{i===responseInfo.gameInfo.genres.length-1?"":","}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="h-100">
+        <app-tabs [details]="responseInfo"></app-tabs>
+    </div>
+</div>

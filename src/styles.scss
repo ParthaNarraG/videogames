@@ -1,0 +1,226 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$teak: #323a45;
+$codGray: #0d0d0d;
+$primary: #24A0ED;
+$tabBackground: rgba(63, 81, 181, 0.61);
+
+//Common Css
+.centeredItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+a{
+    color: #fff !important;
+}
+
+
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: $teak;
+  input.searchBar{
+      width: 300px !important;
+  }
+  input.searchBar,
+  button.searchButton {
+    border-radius: 0;
+  }
+  button.searchButton{
+    font-weight: 600;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  button.searchButton:hover{
+      background: #fff;
+      color: $primary
+  }
+}
+
+.cardView {
+  width: 100%;
+  height: 400px;
+  background-color: $codGray;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 330ms ease-in-out;
+  animation: fadeInLeft 1.5s backwards;
+  .img-responsive {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+  }
+  h5,
+  span,
+  p {
+    color: #fff;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
+
+.cardView:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+//Details Component
+
+::ng-deep mwl-gauge {
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+    .dial {
+      stroke-width: 10;
+    }
+    .value {
+      stroke-dasharray: none;
+      stroke-width: 13;
+    }
+    .value-text {
+      fill: #fff;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+  
+  .game-gauge {
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%,-50%);
+    &-label {
+      font-size: 20px;
+      color: #fff;
+      position: relative;
+      bottom: 50px;
+      left: 30px;
+    }
+  }
+  
+
+.details-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: #1f3364 !important;
+  .img-wrapper {
+    width: 100%;
+    height: 500px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6  ;
+    }
+    .gameIntro {
+      position: relative;
+      bottom: 30%;
+      h1,
+      h5,
+      span {
+        text-align: center;
+        color: #fff;
+      }
+      h1 {
+        font-size: 35px;
+        font-weight: 600;
+      }
+      h5 {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      span {
+        margin: 0 2px;
+        margin-top: 5px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+//Tabs component
+::ng-deep .mat-tab-group {
+  background-color: #1f3364;
+  color: #fff;
+}
+
+::ng-deep .mat-tab-label {
+  color: #fff;
+}
+
+::ng-deep .mat-tab-group {
+  margin-bottom: 0;
+}
+
+::ng-deep .mat-tab-nav-bar,
+.mat-tab-header {
+  border-bottom: 1px solid #fff;
+}
+
+.game-like-votes {
+  position: relative;
+  bottom: 8px;
+  margin: 0 10px;
+}
+
+.img-screenshot {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+video {
+  width: 100%;
+  object-fit: cover;
+}
+::ng-deep .mat-tab-label.mat-tab-label-active {
+  color: #fff;
+  width: 160px !important;
+}
+::ng-deep mat-ink-bar.mat-ink-bar {
+  height: 2px !important;
+  background-color: #fff !important;
+}
+
+.fontChange{
+    font-size: 16px;
+    color: #fff !important;
+}
+
+@media only screen and (max-width:484px){
+    .centeredItem{
+        justify-content: start;
+        margin-left: 25px;
+    }
+}

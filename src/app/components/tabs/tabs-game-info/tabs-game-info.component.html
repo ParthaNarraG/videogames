@@ -1,0 +1,35 @@
+<div class='container my-5'>
+    <p class="fontChange">Platforms :
+        <span *ngFor="let platform of details.gameInfo.parent_platforms;let i=index">
+            {{platform.platform.name}}
+            {{i===details.gameInfo.parent_platforms.length-1?"":','}}
+        </span>
+    </p>
+    <p class="fontChange" *ngIf="details.gameInfo.publishers.length>0">Publishers :
+        <span
+        *ngFor="let publisher of details.gameInfo.publishers;let i=index">
+            {{publisher.name}}
+            {{i===details.gameInfo.publishers.length-1?"":','}}
+        </span>
+    <p class="fontChange"  *ngIf="details.gameInfo.website">Website : <a href={{details.gameInfo.website}} target=_blank>{{details.gameInfo.website}}</a>
+    </p>
+    <p class="fontChange">Description :</p>
+    <div class="game-description" [ngStyle]="{'font-size':'16px'}" [innerHTML]="details.gameInfo.description"></div>
+    <div class="d-flex flex-row w-100">
+    <div *ngFor="let rating of details.gameInfo.ratings">
+            <span *ngIf="rating.title==='exceptional'" style="position: relative;">
+                <span>
+                    <mat-icon [ngStyle]="{'color':'green'}" class="game-votes-up">thumb_up</mat-icon>
+                </span>
+                <span class="game-like-votes">{{rating.count || 0}}</span>
+            </span>
+            <span *ngIf="rating.title==='skip'" style="position: relative;">
+                <span>
+                    <mat-icon [ngStyle]="{'color':'red'}" class="game-votes-up">thumb_down</mat-icon>
+                </span>
+                <span class="game-like-votes">{{rating.count || 0}}</span>
+            </span>
+        </div>
+    </div>
+
+</div>
