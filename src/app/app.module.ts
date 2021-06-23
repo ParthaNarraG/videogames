@@ -17,6 +17,7 @@ import { TabsGameInfoComponent } from './components/tabs/tabs-game-info/tabs-gam
 import { TabsScreenshotsComponent } from './components/tabs/tabs-screenshots/tabs-screenshots.component';
 import { TabsTrailersComponent } from './components/tabs/tabs-trailers/tabs-trailers.component';
 import { GaugeModule } from 'angular-gauge';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GaugeModule } from 'angular-gauge';
     TabsComponent,
     TabsGameInfoComponent,
     TabsScreenshotsComponent,
-    TabsTrailersComponent
+    TabsTrailersComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
